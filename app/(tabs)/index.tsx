@@ -1,5 +1,5 @@
 import {FlatList, Image, Pressable, Text, TouchableOpacity, View,ScrollView} from "react-native";
-import "./global.css"
+import "../global.css"
 import {images, offers} from "@/constant";
 import {Fragment} from "react";
 import cn from "clsx"
