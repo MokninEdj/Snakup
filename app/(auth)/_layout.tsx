@@ -18,17 +18,9 @@ const AuthLayout = () => {
                     <ImageBackground source={images.loginGraphic} resizeMode={"stretch"} className={"size-full rounded-b-lg"}/>
                     <Image source={images.logo} className={"self-center size-48 absolute -bottom-16 z-10"} resizeMode={"contain"}/>
                 </View>
-                <CustomInput
-                    label={"Email"}
-                    keyboardType={"email-address"}
-                    placeholder={"Enter your email"}
-                    value={''}
-                    onChangeText={()=>{}
 
-                }/>
-                <CustomButton/>
-            </ScrollView>
             <Slot />
+            </ScrollView>
         </KeyboardAvoidingView>
     )
 }
