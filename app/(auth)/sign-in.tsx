@@ -1,9 +1,11 @@
 import CustomButton from "@/components/CustomButton";
 import CustomInput from "@/components/CustomInput";
 import { signIn } from "@/lib/appwrite";
+import * as Sentry from "@sentry/react-native";
 import { Link, router } from "expo-router";
 import React, { useState } from "react";
-import { Alert, Text, View } from "react-native";
+
+import { Alert, Button, Text, View } from "react-native";
 const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({ email: "", password: "" });
@@ -28,6 +30,13 @@ const SignIn = () => {
 
   return (
     <View className={"gap-10 bg-white p-5 mt-5"}>
+      <Button
+        title="Try!"
+        onPress={() => {
+          console.log("First error");
+          Sentry.captureException(new Error("First error"));
+        }}
+      />
       <CustomInput
         label={"Email"}
         keyboardType={"email-address"}
